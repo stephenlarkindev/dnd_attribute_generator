@@ -1,1 +1,1 @@
-# dnd_attribute_generator
+# Dungeons and Dragons Ability Score Generator
