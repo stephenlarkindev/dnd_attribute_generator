@@ -1,39 +1,27 @@
 import React from "react";
 import uniqid from "uniqid";
+import Aux from "../../hoc/Aux/Aux";
+
 import Attribute from "./Attribute/Attribute";
 import Dice from "../Dice/Dice";
 
-class Attributes extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      rolls: []
-    };
-  }
-  componentDidMount() {
-    for (let i = 0; i < 6; i++) {
-      let new_roll_value = this.state.rolls;
-      new_roll_value.push(Attribute());
-      this.setState({
-        rolls: new_roll_value
-      });
-    }
-  }
+import styles from "./Attributes.scss";
 
-  render() {
-    return (
-      <div>
-        {this.state.rolls.map(attr => (
-          <div key={uniqid()} className={["dice", "container"].join(" ")}>
-            {attr.map(a => (
-              <Dice key={uniqid()} diceVal={a} />
-            ))}
-            <p>Total: {attr.reduce((a, b) => a + b, 0)}</p>
-          </div>
-        ))}
-      </div>
-    );
-  }
-}
+const Attributes = props => {
+  return (
+    <Aux>
+      {props.rolls.map(attr => (
+        <div key={uniqid()} className={styles.diceContainer}>
+          {attr.map(a => (
+            <Dice key={uniqid()} diceVal={a} />
+          ))}
+          <p className={styles.total}>
+            Total: {attr.reduce((a, b) => a + b, 0)}
+          </p>
+        </div>
+      ))}
+    </Aux>
+  );
+};
 
 export default Attributes;

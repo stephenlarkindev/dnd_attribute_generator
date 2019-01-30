@@ -1,5 +1,10 @@
 .dice {
-  display: inline-block;
+  display: flex;
+  box-sizing: border-box;
+
+  padding: 5px;
+  background: white;
+
   margin: 2px;
   width: 40px;
   height: 40px;
@@ -13,13 +18,13 @@
     text-align: center;
   }
 
-  @for $i from 1 through 6 {
-    &_#{$i} {
-      height: 10px;
-      width: 10px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-    }
-  }
+  // @for $i from 1 through 6 {
+  //   &_#{$i} {
+  //     height: 10px;
+  //     width: 10px;
+  //     background-color: #bbb;
+  //     border-radius: 50%;
+  //     display: inline-block;
+  //   }
+  // }
 }

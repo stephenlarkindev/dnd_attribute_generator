@@ -4,7 +4,7 @@ import style from "./Dice.scss";
 const dice = props => (
   <div className={style["dice"]}>
     <div>
-      <i className={style["dice_" + props.diceVal]} />
+      <i className={style["dice-" + props.diceVal]} />
     </div>
   </div>
 );
